@@ -1,0 +1,754 @@
+$navColorActive: #E2D5B3;
+$backgroundColor: #1C2D47;
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Poppins:wght@300;400;600;700&family=Shalimar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Poppins:wght@300;400;600;700&family=Satisfy&family=Shalimar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Kalam&family=Poppins:wght@300;400;600;700&family=Satisfy&family=Shalimar&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/*Creamos la pseudoclase root donde incluimos las properties y poder utilizarlas en cualquier elemento*/
+:root {
+    --padding-container: 100px 0;
+    --color-title: #001a49;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: var(--padding-container);
+
+}
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    max-height: 800px; //Cubrimos problemas con los ipads
+    position: relative; //Para que un elemento se posiscion absolutamente a este contenedor
+    display: grid; //creamos dos columnas
+    grid-template-rows: 100px 1fr; //1fr va tomar contenido sobrante luego de los 100px
+    background-image: linear-gradient(180deg, #0000005c 0%, #0000008c 100%), url("../img/teamME.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 95%, 0 80%);
+}
+
+
+/*Al momento de utilizar position:fixed y clip-path si la position es 
+hijo de un clip-path en vez de fijarse al navegador se va a fijar en el elemento
+clip-path, por eso creamos en la clase hero con la pseudoclase before*/
+
+
+/*NAV*/
+
+.nav {
+    --padding-container: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav__title {
+    font-weight: 300;
+    color: white;
+    font-size: 25px;
+}
+
+.nav__link {
+    margin-left: auto;
+    padding: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 2em;
+
+
+}
+
+.logo {
+    background-color: white;
+    border-radius: 100%;
+    color: $backgroundColor;
+    padding: 15px;
+    border: $backgroundColor 2px solid;
+}
+
+.nav__items {
+    list-style: none;
+
+}
+
+
+.nav__links {
+    text-decoration: none;
+    color: white;
+    display: inline;
+}
+
+.nav__links:hover {
+    color: $navColorActive;
+}
+
+.nav__menu {
+    margin-left: auto;
+    cursor: pointer;
+    display: none;
+
+}
+
+.nav__img {
+    display: block;
+    width: 30px;
+}
+
+.nav__close {
+    display: var(--show, none);
+}
+
+
+/*Hero Container*/
+.hero__container {
+    color: white;
+    max-width: 800px;
+    --padding-container: 0;
+    display: grid;
+    grid-auto-rows: max-content;
+    align-content: center;
+    gap: 1em;
+    padding-bottom: 100px;
+    text-align: center;
+
+
+}
+
+.hero__title {
+    font-size: 5rem;
+    font-family: 'Shalimar', cursive;
+    letter-spacing: 5px;
+}
+
+.hero__arrownDown {
+
+    display: flex;
+    justify-self: center;
+    width: 65px;
+    height: 65px;
+    margin-bottom: 40px;
+    align-items: center;
+    border-radius: 50%;
+
+    /*Animaciones*/
+    animation-name: mover;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+
+
+.hero__paragraph {
+    margin-bottom: 20px;
+    color: $navColorActive;
+
+    font-size: 1.8rem;
+
+}
+
+
+.cta1 {
+    text-decoration: none;
+    color: $backgroundColor;
+    background-color: white;
+    padding-bottom: 2px;
+    background-color: #128C7F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    color: white;
+    justify-self: center; //ocupa solo su contenido
+    border-radius: 10px;
+    font-size: 18px;
+    transition: .55s;
+
+    img {
+        padding-left: 10px;
+    }
+}
+
+.cta1:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 2px 5px 0px $navColorActive;
+
+}
+
+.cta {
+    text-decoration: none;
+    color: $backgroundColor;
+    background-color: white;
+    padding-bottom: 2px;
+    background-color: $backgroundColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    color: white;
+    width: 300px;
+    justify-self: center; //ocupa solo su contenido
+    border-radius: 10px;
+    font-size: 18px;
+    transition: .55s;
+    text-align: center;
+    margin: auto;
+}
+
+.cta:hover {
+    transform: scale(1.02);
+    color: $navColorActive;
+}
+
+@keyframes mover {
+    0% {
+        transform: translateY(0);
+    }
+
+    75% {
+        transform: translateY(75%);
+    }
+}
+
+/*Que Hacemos*/
+
+.about {
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 2rem;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+
+
+.about__paragraph {
+    line-height: 1.7;
+    color: white;
+
+
+}
+
+.about__paragraph1 {
+    line-height: 1.7;
+    margin-top: 25px;
+
+
+}
+
+.about__main {
+    padding-top: 80px;
+    display: grid;
+    width: 90%;
+    margin: 0 auto;
+    gap: 1em;
+    overflow: hidden;
+    grid-template-columns: repeat(auto-fit, minmax(260px, auto));
+
+}
+
+.about__icons {
+    display: grid;
+    gap: 1em;
+    justify-content: center;
+    width: 300px;
+    overflow: hidden;
+    margin: 0 auto;
+    border: 1px solid;
+    padding: 25px;
+    border-bottom-right-radius: 30px;
+    background-color: $backgroundColor;
+    cursor: pointer;
+    transition: .55s;
+}
+
+.about__icons:hover {
+    transform: scale(1.02);
+    border-top-left-radius: 30px;
+    box-shadow: 0px 3px 7spx 0px $backgroundColor;
+}
+
+.about__icon {
+    font-size: 35px;
+    margin: auto;
+    color: $navColorActive;
+}
+
+.about__title {
+    color: $navColorActive;
+}
+
+/*Tienda*/
+
+.market {
+    /*https://www.magicpattern.design/tools/css-backgrounds*/
+    background-color: #e9ecf0;
+
+    background-image: radial-gradient(#1d245e 0.75px, transparent 0.75px), radial-gradient(#1d245e 0.75px, #e9ecf0 0.75px);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+    overflow: hidden;
+}
+
+.market__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+    align-items: center;
+
+
+}
+
+.market__texts {
+    line-height: 1.7;
+}
+
+.subtitleh3 {
+    color: $backgroundColor;
+    margin-bottom: 5px;
+}
+
+
+.market__paragraph {
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.market__picture {
+    max-width: 500px;
+}
+
+.market__img {
+    width: 100%;
+    height: 300px;
+    border-left: 5px double $backgroundColor;
+    display: block;
+
+}
+
+/*Details*/
+.details {
+    margin: 70px 0;
+    text-align: center;
+    font-family: 'Shalimar', cursive;
+    font-size: 50px;
+    letter-spacing: 5px;
+}
+
+/*Our Jobs*/
+
+.jobs {
+
+    background-color: $navColorActive;
+}
+
+.jobs__container {
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    gap: 2em;
+    align-items: center;
+}
+
+.jobs__body {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2em;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.jobs__body--show {
+    pointer-events: unset;
+    opacity: 1;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.jobs__img {
+    width: 350px;
+    height: 350px;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: 50% 30%;
+}
+
+.jobs__text {
+    max-width: 700px;
+}
+
+.jobs__arrow {
+    width: 90%;
+    cursor: pointer;
+}
+
+/*Automatism*/
+.automatism {
+    margin-top: 70px;
+    line-height: 2.4;
+}
+
+.automatism__copy {
+    margin-bottom: 30px;
+    width: 60%;
+    margin: 0 auto;
+}
+
+
+/*Footer*/
+.footer {
+
+    background-color: $backgroundColor;
+    margin-top: 50px;
+
+}
+
+.footer__title {
+    font-weight: 300;
+    font-size: 2rem;
+    margin-bottom: 30px;
+
+}
+
+.footer__title,
+.footer__newsletter {
+    color: #fff;
+}
+
+.footer__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 60px;
+}
+
+.nav--footer {
+    padding-bottom: 20px;
+    display: grid;
+    gap: 1em;
+    grid-auto-flow: row;
+    height: 100%;
+}
+
+.nav__link--footer {
+    display: flex;
+    margin: 0;
+    margin-right: 20px;
+    flex-wrap: wrap;
+}
+
+.footer__inputs {
+    margin-top: 10px;
+    display: flex;
+    overflow: hidden;
+}
+
+.footer__input {
+    background-color: #fff;
+    height: 50px;
+    display: block;
+    padding-left: 10px;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    margin-right: 16px;
+}
+
+.footer__submit {
+    margin-left: auto;
+    display: inline-block;
+    height: 50px;
+    padding: 0 20px;
+    background-color: $navColorActive;
+    border: none;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 6px;
+    color: $backgroundColor;
+    cursor: pointer;
+    transition: .55s;
+
+}
+
+.footer__submit:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 2px 5px 0px $navColorActive;
+}
+
+.footer__copy {
+    --padding-container: 30px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.footer__copyright {
+    font-weight: 300;
+
+    i {
+        color: $navColorActive;
+    }
+}
+
+.footer__icons {
+
+    margin-bottom: 10px;
+}
+
+.footer__social {
+    margin-bottom: 25px;
+}
+
+.footer__img {
+    width: 30px;
+}
+
+#span__footer {
+    color: $navColorActive;
+}
+
+/*Medias Querys*/
+
+@media (max-width:800px) {
+
+    .nav__menu {
+        display: block;
+
+    }
+
+    .nav__logo {
+
+        h2 {
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+
+            span {
+                margin-right: 5px;
+                padding: 5px;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .nav__link--menu {
+
+        position: fixed;
+        background-color: #000;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        z-index: 100;
+        opacity: 0;
+        pointer-events: none;
+        transition: .7s opacity;
+
+    }
+
+    .nav__link--show {
+        --show: block;
+        opacity: 1;
+        pointer-events: unset;
+    }
+
+    .nav__close {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        width: 30px;
+        cursor: pointer;
+    }
+
+    .hero__title {
+        font-size: 3.5rem;
+
+    }
+
+    .about__main {
+        gap: 2em;
+    }
+
+    .about__icons:last-of-type {
+        //agarro el ultimo icono de este tipo
+        grid-column: 1/-1;
+    }
+
+
+    .market__container {
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content 1fr;
+        gap: 3em;
+        text-align: center;
+    }
+
+    .market_picture {
+        grid-row: 1/2;
+        justify-content: center;
+
+
+
+    }
+
+    .market__img {
+
+        border-left: none;
+       
+
+
+    }
+
+    .jobs__container{
+        grid-template-columns: 30px 1fr 30px;
+    }
+
+    .jobs__body{
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content max-content;
+        gap: 3em;
+        justify-items: center;
+    }
+
+    .jobs__img{
+        width: 300px;
+        height: 300px;
+    }
+
+    .automatism__copy{
+        width: 100%;
+        margin: 0 15px;
+    }
+
+    .footer__container{
+        
+        flex-wrap: wrap;
+    }
+    .footer__title{
+        justify-self: center;
+       
+    }
+
+    .nav--footer{
+
+     
+
+            h2 {
+                font-size: 18px;
+                display: flex;
+                align-items: center;
+    
+                span {
+                    margin-right: 5px;
+                    padding: 5px;
+                    font-weight: bold;
+                }
+            }
+        
+        width: 100%;
+        justify-items: center ;
+    }
+    
+    .nav--footer{
+        padding-bottom: 60px ;
+
+    }
+    .nav__link--footer{
+        width: 100%;
+        justify-content: space-evenly;
+        margin: 0;
+    }
+
+    .footer__form{
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    .footer__input{
+        flex: 1;
+    }
+
+    .footer__newsletter{
+        font-size: 1rem;
+    }
+    .footer__inputs{
+        flex-wrap: wrap;
+    }
+
+    .footer__input{
+        flex-basis: 100%;
+        margin: 0;
+        margin-bottom: 16px;
+    }
+
+   
+
+    .footer__submit{
+        margin-right: 0;
+        width: 100%;
+        
+    }
+
+
+}
+
+@media (max-width:600px){
+    .jobs__img{
+        width: 200px;
+        height: 200px;
+    }
+    .hero__title{
+        font-size: 2rem;
+    }
+
+    .hero__paragraph{
+        font-size: 1rem;
+    }
+
+    .subtitle{
+        font-size: 1.8rem;
+    }
+    .jobs__container{
+        grid-template-columns: 28px 1fr 28px;
+        gap: .9rem;
+    }
+
+    .automatism__copy{
+        margin: 0 25px;
+    }
+
+    .cta{
+        margin-top: 15px;
+    }
+
+    .footer__copyright{
+        font-size: 15px;
+    }
+
+    .footer__title{
+        justify-self: center;
+    }
+.nav__link-footer{
+    justify-content: space-between;
+}
+    
+}

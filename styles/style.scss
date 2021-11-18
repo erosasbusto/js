@@ -1,0 +1,316 @@
+$navColorActive: #E2D5B3;
+$backgroundColor: #1C2D47;
+$border-bottom-right-radius: 15px;
+$border-top-left-radius: 15px;
+// Required
+/*@import "../library/bootstrap/node_modules/bootstrap/scss/functions";
+@import "../library/bootstrap/node_modules/bootstrap/scss/variables";
+@import "../library/bootstrap/node_modules/bootstrap/scss/mixins";
+@import "../library/bootstrap/node_modules/bootstrap/scss/root";*/
+/*Letra Google*/
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+// Create your own map
+/*$custom-colors: (
+  "custom-color": #900
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import "../library/bootstrap/node_modules/bootstrap/scss/bootstrap.scss";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; //Para mantener tamaño de las cajas
+}*/
+
+
+/*Bootstrap CSS*/
+
+li a.active {
+    background-color: $navColorActive;
+    border-radius: 2px;
+    color: black !important;
+
+}
+
+a {
+    color: white !important;
+}
+
+nav {
+    background-color: $backgroundColor;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    h4 {
+        color: $navColorActive !important;
+        margin-bottom: 0;
+        margin-left: 24px;
+        font-family: 'Concert One', cursive;
+    }
+}
+
+.carousel-item {
+
+    img {
+
+
+        background-attachment: fixed;
+        background-position: center;
+        position: relative;
+        height: 85vh;
+
+    }
+
+
+
+}
+
+/*Fin Bootstrap CSS*/
+
+/*Que Hacemos*/
+
+
+
+
+.aboutUs {
+
+    .paragraphAU {
+        margin-top: 55px;
+        text-align: center;
+        line-height: 25px;
+
+
+        p {
+            font-size: 18px;
+        }
+
+    }
+
+    .titleAU {
+        display: flex;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        margin-right: 320px;
+        color: $backgroundColor;
+        text-align: right;
+        justify-content: right;
+
+
+
+        h3 {
+            font-size: 15px;
+            letter-spacing: 1px;
+            border-bottom: 2px solid $navColorActive;
+
+        }
+    }
+}
+
+.doWeDoAll {
+    margin: 75px 0px 0px 0px;
+    background-color: $backgroundColor;
+
+    .doWeDo__Title {
+        h4 {
+            color: white;
+            padding-top: 25px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            letter-spacing: 1px;
+            text-align: center;
+            font-size: 35px;
+            letter-spacing: 1px;
+            font-weight: 25px;
+
+
+        }
+
+        hr {
+            color: $navColorActive;
+            width: 190px;
+            margin: auto;
+            border: none;
+            height: 3px;
+
+
+        }
+    }
+
+    .doWeDo {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5px;
+        flex-flow: row wrap;
+
+
+        .target {
+            text-align: center;
+            border: 1px solid $navColorActive;
+            margin: 30px 25px 25px 25px;
+            width: 350px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            padding: 10px;
+            cursor: pointer;
+            transition: .75s;
+
+            .targetTitle {
+                color: white;
+                text-align: center;
+            }
+
+            .targetParagraph {
+                color: $navColorActive;
+                text-align: center;
+                padding: 5px;
+
+            }
+
+            .targetImg {
+                text-align: center;
+                color: $navColorActive;
+                font-size: 35px;
+                margin-bottom: 15px;
+
+            }
+        }
+
+        .target:hover {
+            box-shadow: 0px 0px 5px 0px rgba(255, 252, 252, 0.8);
+            border-top-left-radius: 30px;
+            animation: 5s line;
+            transform: scale(1.03);
+        }
+
+    }
+}
+
+.ourJobs {
+    
+    .ourJobs__Title {
+        h4 {
+            color: $backgroundColor;
+            margin: 50px 0px 2px 0px;
+            padding-top: 25px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            letter-spacing: 1px;
+            text-align: center;
+            font-size: 35px;
+            letter-spacing: 1px;
+            font-weight: 25px;
+
+        }
+
+        hr {
+            color: black;
+            width: 240px;
+            margin: 2px auto 30px auto;
+            border: none;
+            height: 3px;
+
+
+        }
+    }
+
+    .img-gallery {
+        width: 90%;
+        margin: 50px auto 50px;
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        gap: 20px;
+        position: relative;
+        
+    }
+
+    .img-gallery img {
+        width: 100%;
+        cursor: pointer;
+        transition: 1s;
+        max-height: 350px;
+
+    }
+}
+footer{
+.redes-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    height: 80px;
+    background-color: $backgroundColor;
+    
+
+    ul{
+        li{
+            display: inline-block;
+            margin: 0 25px;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            
+    
+            a{
+                display: block;
+                border-radius: 20px;
+                padding: 0 10px;
+                background-color: $backgroundColor;
+                color: $navColorActive;
+                line-height: 50px;
+                font-size: 20px;
+                box-shadow: 0 3px 5px 2px rgba(0, 0, 0, .2);
+                transition: .65s;
+                
+            }
+    
+        }
+    }
+}
+
+.redes-container ul li a:hover{
+    transform: translateX(5px) scale(1.05);
+    box-shadow: 0 5px 5px 2px rgba(0, 0, 0, .4);
+    filter: none;
+}
+.firma{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $backgroundColor;
+    
+    
+    .titulo-final{
+        text-align: center;
+        font-size: 15px;
+        margin: 20px 0 0 0;
+        color: white;
+        padding-bottom: 20px;
+    }
+
+    span{
+        color: $navColorActive;
+    }
+
+i{
+    color: $navColorActive;
+}
+}
+}
+
+.logo{
+    cursor: pointer;
+}
+
+.inicio{
+    
+       text-decoration: none; 
+       display: flex;
+       align-items: center;
+    
+}
+

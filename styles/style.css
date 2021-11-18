@@ -1,0 +1,305 @@
+@charset "UTF-8";
+/*@import "../library/bootstrap/node_modules/bootstrap/scss/functions";
+@import "../library/bootstrap/node_modules/bootstrap/scss/variables";
+@import "../library/bootstrap/node_modules/bootstrap/scss/mixins";
+@import "../library/bootstrap/node_modules/bootstrap/scss/root";*/
+/*Letra Google*/
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
+/*$custom-colors: (
+  "custom-color": #900
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import "../library/bootstrap/node_modules/bootstrap/scss/bootstrap.scss";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; //Para mantener tamaño de las cajas
+}*/
+/*Bootstrap CSS*/
+li a.active {
+  background-color: #E2D5B3;
+  border-radius: 2px;
+  color: black !important;
+}
+
+a {
+  color: white !important;
+}
+
+nav {
+  background-color: #1C2D47;
+}
+
+.logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.logo h4 {
+  color: #E2D5B3 !important;
+  margin-bottom: 0;
+  margin-left: 24px;
+  font-family: 'Concert One', cursive;
+}
+
+.carousel-item img {
+  background-attachment: fixed;
+  background-position: center;
+  position: relative;
+  height: 85vh;
+}
+
+/*Fin Bootstrap CSS*/
+/*Que Hacemos*/
+.aboutUs .paragraphAU {
+  margin-top: 55px;
+  text-align: center;
+  line-height: 25px;
+}
+
+.aboutUs .paragraphAU p {
+  font-size: 18px;
+}
+
+.aboutUs .titleAU {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-right: 320px;
+  color: #1C2D47;
+  text-align: right;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+}
+
+.aboutUs .titleAU h3 {
+  font-size: 15px;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #E2D5B3;
+}
+
+.doWeDoAll {
+  margin: 75px 0px 0px 0px;
+  background-color: #1C2D47;
+}
+
+.doWeDoAll .doWeDo__Title h4 {
+  color: white;
+  padding-top: 25px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  letter-spacing: 1px;
+  text-align: center;
+  font-size: 35px;
+  letter-spacing: 1px;
+  font-weight: 25px;
+}
+
+.doWeDoAll .doWeDo__Title hr {
+  color: #E2D5B3;
+  width: 190px;
+  margin: auto;
+  border: none;
+  height: 3px;
+}
+
+.doWeDoAll .doWeDo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 5px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+.doWeDoAll .doWeDo .target {
+  text-align: center;
+  border: 1px solid #E2D5B3;
+  margin: 30px 25px 25px 25px;
+  width: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  -webkit-transition: .75s;
+  transition: .75s;
+}
+
+.doWeDoAll .doWeDo .target .targetTitle {
+  color: white;
+  text-align: center;
+}
+
+.doWeDoAll .doWeDo .target .targetParagraph {
+  color: #E2D5B3;
+  text-align: center;
+  padding: 5px;
+}
+
+.doWeDoAll .doWeDo .target .targetImg {
+  text-align: center;
+  color: #E2D5B3;
+  font-size: 35px;
+  margin-bottom: 15px;
+}
+
+.doWeDoAll .doWeDo .target:hover {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(255, 252, 252, 0.8);
+          box-shadow: 0px 0px 5px 0px rgba(255, 252, 252, 0.8);
+  border-top-left-radius: 30px;
+  -webkit-animation: 5s line;
+          animation: 5s line;
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+}
+
+.ourJobs .ourJobs__Title h4 {
+  color: #1C2D47;
+  margin: 50px 0px 2px 0px;
+  padding-top: 25px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  letter-spacing: 1px;
+  text-align: center;
+  font-size: 35px;
+  letter-spacing: 1px;
+  font-weight: 25px;
+}
+
+.ourJobs .ourJobs__Title hr {
+  color: black;
+  width: 240px;
+  margin: 2px auto 30px auto;
+  border: none;
+  height: 3px;
+}
+
+.ourJobs .img-gallery {
+  width: 90%;
+  margin: 50px auto 50px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30% 30% 30%;
+      grid-template-columns: 30% 30% 30%;
+  gap: 20px;
+  position: relative;
+}
+
+.ourJobs .img-gallery img {
+  width: 100%;
+  cursor: pointer;
+  -webkit-transition: 1s;
+  transition: 1s;
+  max-height: 350px;
+}
+
+footer .redes-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 5px;
+  height: 80px;
+  background-color: #1C2D47;
+}
+
+footer .redes-container ul li {
+  display: inline-block;
+  margin: 0 25px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+}
+
+footer .redes-container ul li a {
+  display: block;
+  border-radius: 20px;
+  padding: 0 10px;
+  background-color: #1C2D47;
+  color: #E2D5B3;
+  line-height: 50px;
+  font-size: 20px;
+  -webkit-box-shadow: 0 3px 5px 2px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 3px 5px 2px rgba(0, 0, 0, 0.2);
+  -webkit-transition: .65s;
+  transition: .65s;
+}
+
+footer .redes-container ul li a:hover {
+  -webkit-transform: translateX(5px) scale(1.05);
+          transform: translateX(5px) scale(1.05);
+  -webkit-box-shadow: 0 5px 5px 2px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 5px 5px 2px rgba(0, 0, 0, 0.4);
+  -webkit-filter: none;
+          filter: none;
+}
+
+footer .firma {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #1C2D47;
+}
+
+footer .firma .titulo-final {
+  text-align: center;
+  font-size: 15px;
+  margin: 20px 0 0 0;
+  color: white;
+  padding-bottom: 20px;
+}
+
+footer .firma span {
+  color: #E2D5B3;
+}
+
+footer .firma i {
+  color: #E2D5B3;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.inicio {
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=style.css.map */
